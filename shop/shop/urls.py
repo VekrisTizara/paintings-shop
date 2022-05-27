@@ -21,16 +21,23 @@ from django.contrib.auth.views import LoginView, LogoutView
 import myauth.views as myauth
 
 import paintings.views as painting_views
+import basket.views as basket_views
 from shop.settings import DEBUG, MEDIA_URL, MEDIA_ROOT
 
 urlpatterns = [
     path('', painting_views.index, name='index'),
+
     path('products/', painting_views.PaintingListView.as_view(), name='painting_list'),
     path('painting/detail/<int:pk>/', painting_views.PaintingDetailView.as_view(), name='painting_detail'),
+
     path('admin/', admin.site.urls),
+
     path('register/', myauth.MyUserCreateView.as_view(), name='register'),
     path('login/', LoginView.as_view(), name='login'),
     path('logout/', LogoutView.as_view(), name='logout'),
+
+
+    path('checkout/', basket_views.CheckoutView.as_view(), name='checkout')
 
 ]+static(MEDIA_URL, document_root=MEDIA_ROOT)
 

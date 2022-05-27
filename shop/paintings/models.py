@@ -18,6 +18,7 @@ class Painting(models.Model):
     width = models.IntegerField(null=True)
     description = models.TextField(blank=True)
     image = models.ImageField(upload_to='images', blank=True)
+    price = models.IntegerField(null=True)
 
     def __str__(self):
         return f'Painting: {self.name}'
@@ -33,5 +34,8 @@ class PaintingMaterial(models.Model):
 
     def __str__(self):
         return self.name
+
+
+
 
 

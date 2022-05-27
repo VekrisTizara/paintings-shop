@@ -35,31 +35,41 @@
                     <a class="nav-link active" aria-current="page" href="{% url 'index' %}">Home</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="{% url 'painting_list' %}">List</a>
+                    <a class="nav-link active" aria-current="page" href="{% url 'painting_list' %}">Products</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="{% url 'checkout' %}">Basket</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="{% url 'register' %}">Register</a>
+                </li>
+                <li>
+                {% if user.is_anonymous %}
+                <a class="nav-link active" aria-current="page" href="{% url 'login' %}">Login</a>
+                {% else %}
+                <a class="nav-link active" aria-current="page" href="{% url 'logout' %}">Logout</a>
+                {% endif %}
                 </li>
             </ul>
         </div>
     </div>
 </nav>
 
-{% block menu %}
-    <ul>
-        <li><a href="{% url 'register' %}">user register</a></li>
-        <li>
-            {% if user.is_anonymous %}
-                <a href="{% url 'login' %}">login</a>
-            {% else %}
-                <a href="{% url 'logout' %}">logout</a>
-            {% endif %}
-        </li>
-    </ul>
-{% endblock %}
 
 <h1>{{ object.name }}</h1>
 {#<img src="static/birds.jpg" class="img-fluid rounded" height=”200px” width=”200px”>#}
 
+
+
 {% block body %}
 {% endblock %}
+
+  <footer class="my-5 pt-5 text-muted text-center text-small">
+    <p class="mb-1">&copy; Warsaw, 2022</p>
+    <ul class="list-inline">
+
+    </ul>
+  </footer>
 
 </body>
 </html>
