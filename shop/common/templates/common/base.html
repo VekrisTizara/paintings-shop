@@ -38,10 +38,14 @@
                     <a class="nav-link active" aria-current="page" href="{% url 'painting_list' %}">Products</a>
                 </li>
                 <li class="nav-item">
+                    {% if not user.is_anonymous %}
                     <a class="nav-link active" aria-current="page" href="{% url 'checkout' %}">Basket</a>
+                    {% endif %}
                 </li>
                 <li class="nav-item">
+                    {% if user.is_anonymous %}
                     <a class="nav-link active" aria-current="page" href="{% url 'register' %}">Register</a>
+                    {% endif %}
                 </li>
                 <li>
                 {% if user.is_anonymous %}
@@ -65,7 +69,7 @@
 {% endblock %}
 
   <footer class="my-5 pt-5 text-muted text-center text-small">
-    <p class="mb-1">&copy; Warsaw, 2022</p>
+    <p class="mb-1">&copy; Tizara, 2022</p>
     <ul class="list-inline">
 
     </ul>
