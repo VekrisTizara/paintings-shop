@@ -37,8 +37,10 @@ urlpatterns = [
     path('logout/', LogoutView.as_view(), name='logout'),
 
 
-    path('checkout/', basket_views.CheckoutView.as_view(), name='checkout')
-
+    path('checkout/', basket_views.CheckoutView, name='checkout'),
+    path('addToBasket/', basket_views.AddToBasket, name='addToBasket'),
+    path('applyCheckout/', basket_views.checkout_apply, name='applyCheckout'),
+    path('removeFromBasket/', basket_views.delete_product_from_basket, name='removeFromBasket')
 ]+static(MEDIA_URL, document_root=MEDIA_ROOT)
 
 if DEBUG:

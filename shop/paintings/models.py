@@ -19,6 +19,7 @@ class Painting(models.Model):
     description = models.TextField(blank=True)
     image = models.ImageField(upload_to='images', blank=True)
     price = models.IntegerField(null=True)
+    isordered = models.BooleanField(default=False)
 
     def __str__(self):
         return f'Painting: {self.name}'

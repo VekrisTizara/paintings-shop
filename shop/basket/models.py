@@ -9,4 +9,5 @@ class Basket(models.Model):
 
 class ProductToBasketConnection(models.Model):
     product = models.ForeignKey(Painting, on_delete=models.CASCADE)
-    basket = models.ForeignKey(Basket, on_delete=models.CASCADE)
+    basket = models.ForeignKey(Basket, on_delete=models.CASCADE,
+        related_name="productConnections")
