@@ -16,3 +16,4 @@ python manage.py runserver
 ```
 
 After, the server will start at http://127.0.0.1:8000/
+The database is sqlite, stored at /shop/db.sqlite3
