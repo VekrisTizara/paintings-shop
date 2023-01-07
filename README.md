@@ -1,21 +1,29 @@
 # Paintings shop
 
-Проект представляет собой площадку интернет-магазина творческих товаров.
-В нём можно найти картины и их описание, в т.ч. информацию о стиле работы,
-использованных материалах, размере работы, её стоимости.
+The project had been made with Django and Bootstrap, and has registration, log in and log out forms. The main page welcomes registered users by their name. 
 
-О каждом продукте можно подробнее прочитать на странице с информацией о нём.
-Каждый продукт можно добавить в корзину. 
+Administrator can add items to the shop using Django administration page. There are description fields, such as name, style, price, image, etc. Each product has its page, where you can read all the information about it and add it to basket.
 
-При оформлении заказа происходит проверка, не был ли товар из корзины уже заказан,
-и если был, то пользователь получается соответствующее уведомление и не может купить данный товар.
-Эта проверка была создана, так как предполагается, что каждый продаваемый элемент существует в единственном экземпляре. 
-Товары из заказа можно удалять, а также проверять их итоговую стоимость.
+At checkout the program checks if items from the basket weren't already ordered, and if they were, the site shows information about it and delete those items from basket. This check exists, because assumed, that the items are unique. Users can delete items from basket and check the total cost. 
 
-При успешном оформлении заказа купленные товары перестают быть доступны для просмотра в галерее товаров
-(и, соответственно, для заказов).
+After a successful ordering, all bought items become invisible for other users and information about them is deleted from gallery page (but not from the base). 
 
-На сайте доступна регистрация.
-При успешном её заполнении, зарегистрированный пользователь увидит приветствие на главной странице. 
+На сайте доступна регистрация, при успешном её заполнении, зарегистрированный пользователь увидит доброе приветствие на главной странице. 
 
-# Запуск
+# Running
+Run the following commands to set up the project locally for development:
+
+``` sh
+git clone https://github.com/VekrisTizara/paintings-shop.git
+cd paintings-shop/
+python -m venv venv
+. ./venv/Scripts/activate
+pip install -r requirements.txt
+cd shop
+python manage.py migrate
+winpty python ./manage.py createsuperuser
+python manage.py runserver
+```
+
+After, the server will start at http://127.0.0.1:8000/
+The database is sqlite, stored at /shop/db.sqlite3
