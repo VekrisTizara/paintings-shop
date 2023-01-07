@@ -1,14 +1,19 @@
 # Paintings shop
 
-The project had been made with Django and Bootstrap, and has registration, log in and log out forms. The main page welcomes registered users by their name. 
+The project had been made with Django and Bootstrap, and has registration,
+log in and log out forms. The main page welcomes registered users by their name. 
 
-Administrator can add items to the shop using Django administration page. There are description fields, such as name, style, price, image, etc. Each product has its page, where you can read all the information about it and add it to basket.
+Administrator can add items to the shop using Django administration page.
+There are description fields, such as name, style, price, image, etc.
+Each product has its page, where you can read all the information about it and add it to basket.
 
-At checkout the program checks if items from the basket weren't already ordered, and if they were, the site shows information about it and delete those items from basket. This check exists, because assumed, that the items are unique. Users can delete items from basket and check the total cost. 
+At checkout the program checks if items from the basket weren't already ordered,
+and if they were, the site shows information about it and delete those items from basket.
+This check exists, because assumed, that the items are unique.
+Users can delete items from basket and check the total cost. 
 
-After a successful ordering, all bought items become invisible for other users and information about them is deleted from gallery page (but not from the base). 
-
-На сайте доступна регистрация, при успешном её заполнении, зарегистрированный пользователь увидит доброе приветствие на главной странице. 
+After a successful ordering, all bought items become invisible for other users
+and information about them is deleted from gallery page (but not from the base). 
 
 # Running
 Run the following commands to set up the project locally for development:
